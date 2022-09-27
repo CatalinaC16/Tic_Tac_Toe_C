@@ -24,6 +24,7 @@ bool isCellFree(int cell)
 
     return is_free;
 }
+
 void place(int cell)
 {
 
@@ -32,6 +33,7 @@ void place(int cell)
 
     bb[row][column] = player;
 }
+
 void change_player()
 {
     if(player == First_player)
@@ -39,6 +41,7 @@ void change_player()
     else player = First_player;
 
 }
+
 void board()
 {
 
@@ -53,10 +56,12 @@ void board()
     printf(" %c | %c | %c \n",bb[2][0],bb[2][1],bb[2][2]);
     printf("   |   |   \n");
 }
+
 int chartoint( int choice)
 {
     return choice-48;
 }
+
 bool row_win()
 {
     for(int i=0; i< 3; i++)
@@ -69,6 +74,7 @@ bool row_win()
     }
     return false;
 }
+
 bool column_win()
 {
     for(int i=0; i<3; i++)
@@ -81,6 +87,7 @@ bool column_win()
     }
     return false;
 }
+
 bool diagonal_win()
 {
     if(bb[0][0] == bb[1][1] && bb[1][1] == bb[2][2])
@@ -95,6 +102,7 @@ bool diagonal_win()
     }
     return false;
 }
+
 bool full()
 {
     for(int i=0; i<3 ; i++)
@@ -109,6 +117,7 @@ bool full()
     return true;
 
 }
+
 int check()
 {
     bool over = row_win() || column_win() || diagonal_win() || full();
